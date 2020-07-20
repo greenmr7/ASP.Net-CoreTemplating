@@ -1,5 +1,13 @@
 # APICore
 
+## Use tooltip
+```javascript
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+```
+
+
 ## data Divisions:
 
 ```json
