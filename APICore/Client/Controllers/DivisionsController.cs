@@ -64,23 +64,31 @@ namespace Client.Controllers
 
         public JsonResult InsertAndUpdate(DivisionVM divisionsVM, int id)
         {
-            var json = JsonConvert.SerializeObject(divisionsVM);
-            var buffer = System.Text.Encoding.UTF8.GetBytes(json);
-            var byteContent = new ByteArrayContent(buffer);
-            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            
-            if (divisionsVM.id == 0)
+            try
             {
-                var result = client.PostAsync("divisions", byteContent).Result;
-                return Json(result);
-            }
-            else if (divisionsVM.id == id)
-            {
-                var result = client.PutAsync("divisions/" + id, byteContent).Result;
-                return Json(result);
-            }
+                var json = JsonConvert.SerializeObject(divisionsVM);
+                var buffer = System.Text.Encoding.UTF8.GetBytes(json);
+                var byteContent = new ByteArrayContent(buffer);
+                byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-            return Json(404);
+                if (divisionsVM.id == 0)
+                {
+                    var result = client.PostAsync("divisions", byteContent).Result;
+                    return Json(result);
+                }
+                else if (divisionsVM.id == id)
+                {
+                    var result = client.PutAsync("divisions/" + id, byteContent).Result;
+                    return Json(result);
+                }
+
+                return Json(404);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }            
         }
 
         public JsonResult Delete(int id)
