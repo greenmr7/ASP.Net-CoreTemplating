@@ -1,0 +1,83 @@
+===================== Department ==========================
+CREATE PROCEDURE SPGetAllDepartment
+AS
+	SELECT *
+	From TB_M_Department;
+RETURN 0
+
+CREATE PROCEDURE SPInsertDepartment
+	@Name varchar(50)
+AS
+	insert into TB_M_Department (Name) values (@Name)
+RETURN 0
+
+CREATE PROCEDURE SPGetIdDepartment
+	@id int
+AS
+	SELECT * 
+	from TB_M_Department 
+	where id = @id
+RETURN 0
+
+CREATE PROCEDURE SPEditDepartment
+	@id int, @name varchar(50)
+AS
+	Update TB_M_Department
+	set Name = @name
+	where id = @id
+RETURN 0
+
+CREATE PROCEDURE SPDeleteDepartment
+	@id int 
+AS
+	delete from TB_M_Department where id = @id;
+RETURN 0
+
+
+===================== Division ==========================
+
+CREATE PROCEDURE SPGetAllDivision
+AS
+	SELECT 
+		DIV.id, 
+		DIV.name, 
+		DEPA.Name as departmentName
+	From TB_M_Division DIV 
+	JOIN TB_M_Department DEPA ON DIV.departmentid = DEPA.id
+RETURN 0
+
+CREATE PROCEDURE SPInsertDivision
+	@Name varchar(50),
+	@departmentID int
+AS
+	INSERT INTO TB_M_Division(name,departmentid) values (@Name,@departmentID)
+RETURN 0
+
+CREATE PROCEDURE SPGetIdDivision
+	@Id int
+AS
+	SELECT 
+		DIV.id, 
+		DIV.name, 
+		DEPA.Name as departmentName
+	From TB_M_Division DIV 
+	JOIN TB_M_Department DEPA ON DIV.departmentid = DEPA.id
+	where DIV.id = @id
+RETURN 0
+
+CREATE PROCEDURE SPEditDivision
+	@id int, @name varchar(50), @departmentID int
+AS
+	Update TB_M_Division
+	set 
+		Name = @name,
+		departmentId = @departmentID
+	where id = @id
+RETURN 0
+
+CREATE PROCEDURE SPDeleteDivision
+	@id int 
+AS
+	delete from TB_M_Division where id = @id;
+RETURN 0
+
