@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aUE7fBYQLc7/bI9XJ+i+kOyuyW3EevW/rcaE93E3jMcjKqJyaNfotirv0RbKyy2hW/aVAYbejTxy/KoGdbXxlg==",
+  "dgSpecHash": "h8zLwZn0Q4MZTOhlnFhEucfdzMkpCW8yjsFLRTnFOm5MG40TjmL3qtIx4PaTVDgFUj3eJ6tIhFOBZsdxQ11s6w==",
   "success": true,
-  "projectFilePath": "D:\\MII\\MCCOC\\#6\\Tugas\\APICore\\APICore\\APICore\\APICore.csproj",
+  "projectFilePath": "D:\\MII\\MCCOC\\#7-Templating\\APICore\\APICore\\APICore\\APICore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kiboy\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",

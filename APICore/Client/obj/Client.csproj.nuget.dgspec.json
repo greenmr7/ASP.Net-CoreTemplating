@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MII\\MCCOC\\#6\\Tugas\\APICore\\APICore\\Client\\Client.csproj": {}
+    "D:\\MII\\MCCOC\\#7-Templating\\APICore\\APICore\\Client\\Client.csproj": {}
   },
   "projects": {
-    "D:\\MII\\MCCOC\\#6\\Tugas\\APICore\\APICore\\APICore\\APICore.csproj": {
+    "D:\\MII\\MCCOC\\#7-Templating\\APICore\\APICore\\APICore\\APICore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MII\\MCCOC\\#6\\Tugas\\APICore\\APICore\\APICore\\APICore.csproj",
+        "projectUniqueName": "D:\\MII\\MCCOC\\#7-Templating\\APICore\\APICore\\APICore\\APICore.csproj",
         "projectName": "APICore",
-        "projectPath": "D:\\MII\\MCCOC\\#6\\Tugas\\APICore\\APICore\\APICore\\APICore.csproj",
+        "projectPath": "D:\\MII\\MCCOC\\#7-Templating\\APICore\\APICore\\APICore\\APICore.csproj",
         "packagesPath": "C:\\Users\\Kiboy\\.nuget\\packages\\",
-        "outputPath": "D:\\MII\\MCCOC\\#6\\Tugas\\APICore\\APICore\\APICore\\obj\\",
+        "outputPath": "D:\\MII\\MCCOC\\#7-Templating\\APICore\\APICore\\APICore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -82,14 +82,14 @@
         }
       }
     },
-    "D:\\MII\\MCCOC\\#6\\Tugas\\APICore\\APICore\\Client\\Client.csproj": {
+    "D:\\MII\\MCCOC\\#7-Templating\\APICore\\APICore\\Client\\Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MII\\MCCOC\\#6\\Tugas\\APICore\\APICore\\Client\\Client.csproj",
+        "projectUniqueName": "D:\\MII\\MCCOC\\#7-Templating\\APICore\\APICore\\Client\\Client.csproj",
         "projectName": "Client",
-        "projectPath": "D:\\MII\\MCCOC\\#6\\Tugas\\APICore\\APICore\\Client\\Client.csproj",
+        "projectPath": "D:\\MII\\MCCOC\\#7-Templating\\APICore\\APICore\\Client\\Client.csproj",
         "packagesPath": "C:\\Users\\Kiboy\\.nuget\\packages\\",
-        "outputPath": "D:\\MII\\MCCOC\\#6\\Tugas\\APICore\\APICore\\Client\\obj\\",
+        "outputPath": "D:\\MII\\MCCOC\\#7-Templating\\APICore\\APICore\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -109,8 +109,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "D:\\MII\\MCCOC\\#6\\Tugas\\APICore\\APICore\\APICore\\APICore.csproj": {
-                "projectPath": "D:\\MII\\MCCOC\\#6\\Tugas\\APICore\\APICore\\APICore\\APICore.csproj"
+              "D:\\MII\\MCCOC\\#7-Templating\\APICore\\APICore\\APICore\\APICore.csproj": {
+                "projectPath": "D:\\MII\\MCCOC\\#7-Templating\\APICore\\APICore\\APICore\\APICore.csproj"
               }
             }
           }

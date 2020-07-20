@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MII\\MCCOC\\#6\\Tugas\\APICore\\APICore\\APICore\\APICore.csproj": {}
+    "D:\\MII\\MCCOC\\#7-Templating\\APICore\\APICore\\APICore\\APICore.csproj": {}
   },
   "projects": {
-    "D:\\MII\\MCCOC\\#6\\Tugas\\APICore\\APICore\\APICore\\APICore.csproj": {
+    "D:\\MII\\MCCOC\\#7-Templating\\APICore\\APICore\\APICore\\APICore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MII\\MCCOC\\#6\\Tugas\\APICore\\APICore\\APICore\\APICore.csproj",
+        "projectUniqueName": "D:\\MII\\MCCOC\\#7-Templating\\APICore\\APICore\\APICore\\APICore.csproj",
         "projectName": "APICore",
-        "projectPath": "D:\\MII\\MCCOC\\#6\\Tugas\\APICore\\APICore\\APICore\\APICore.csproj",
+        "projectPath": "D:\\MII\\MCCOC\\#7-Templating\\APICore\\APICore\\APICore\\APICore.csproj",
         "packagesPath": "C:\\Users\\Kiboy\\.nuget\\packages\\",
-        "outputPath": "D:\\MII\\MCCOC\\#6\\Tugas\\APICore\\APICore\\APICore\\obj\\",
+        "outputPath": "D:\\MII\\MCCOC\\#7-Templating\\APICore\\APICore\\APICore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

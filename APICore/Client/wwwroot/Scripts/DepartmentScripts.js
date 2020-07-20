@@ -1,9 +1,16 @@
 ﻿var table = null;
 
 $(document).ready(function () {
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
     //debugger;
     table = $("#department").DataTable({
         "processing": true,
+        "responsive": true,
+        "pagination": true,
+        "stateSave": true,
         "ajax": {
             url: "/Departments/LoadDepartment",
             type: "GET",
@@ -11,13 +18,21 @@ $(document).ready(function () {
             dataSrc: "",
         },
         "columns": [
+            {
+                "data": "id",
+                render: function (data, type, row, meta) {
+                    return meta.row + meta.settings._iDisplayStart + 1;
+                }
+            },
             { "data": "name" },
             {
+                "sortable": false,
                 "render": function (data, type, row) {
                     //console.log(row);
-                    return '<button class="btn btn-warning" data-placement="left" data-toggle="tooltip" data-animation="false" title="Edit" onclick="return GetById(' + row.id + ')" >Edit</button>'
+                    $('[data-toggle="tooltip"]').tooltip();
+                    return '<button class="btn btn-md btn-outline-warning btn-circle" data-placement="left" data-toggle="tooltip" data-animation="false" title="Edit" onclick="return GetById(' + row.id + ')" ><i class="fa fa-lg fa-edit"></i></button>'
                         + '&nbsp;'
-                        + '<button class="btn btn-danger" data-placement="right" data-toggle="tooltip" data-animation="false" title="Delete" onclick="return Delete(' + row.id + ')" >Delete</button>'
+                        + '<button class="btn btn-md btn-outline-danger btn-circle" data-placement="right" data-toggle="tooltip" data-animation="false" title="Delete" onclick="return Delete(' + row.id + ')" ><i class="fa fa-lg fa-trash"></i></button>'
                 }
             }
         ]
@@ -36,7 +51,7 @@ function GetById(id) {
         url: "/Departments/GetById/",
         data: { id: id }
     }).then((result) => {
-        debugger;
+        //debugger;
         $('#Id').val(result.id);
         $('#Name').val(result.name);
         $('#Save').hide();
@@ -46,21 +61,26 @@ function GetById(id) {
 }
 
 function Save() {
-    debugger;
+    //debugger;
     var Department = new Object();
     Department.name = $('#Name').val();
     $.ajax({
         type:'POST',
         url: "/Departments/Insert/",
+        cache: false,
+        dataType: "JSON",
         data: Department
     }).then((result) => {
-        debugger;
+        //debugger;
         if (result.statusCode == 200) {
             Swal.fire({
                 position: 'center',
-                type: 'success',
-                title: 'Department inserted Successfully'
+                icon: 'success',
+                title: 'Department inserted Successfully',
+                showConfirmButton: false,
+                timer: 1500,
             })
+            table.ajax.reload(null, false);
         } else {
             Swal.fire('Error', 'Failed to Input', 'error');
             ClearScreen();
@@ -75,52 +95,26 @@ function Update() {
     $.ajax({
         type:'POST',
         url: "/Departments/Update/",
+        cache: false,
+        dataType: "JSON",
         data: Department
     }).then((result) => {
-        debugger;
+        //debugger;
         if (result.statusCode == 200) {
             Swal.fire({
                 position: 'center',
-                type: 'success',
-                title: 'Department Updated Successfully'
-            })
+                icon: 'success',
+                title: 'Department Updated Successfully',
+                showConfirmButton: false,
+                timer: 1500,
+            });
+            table.ajax.reload(null, false);
         } else {
             Swal.fire('Error', 'Failed to Input', 'error');
             ClearScreen();
         }
     })
 }
-
-//function Delete(id) {
-//    debugger;
-//    Swal.fire({
-//        title: 'Are you Sure?',
-//        text: 'You wont be able to revert this!',
-//        showCancelButton: true,
-//        confirmButtonColor: '#3085d6',
-//        cancelButtonColor: 'Yes, delete it!'
-//    }).then((result) => {
-//        debugger;
-//        if (result.statusCode == 200) {
-//            $.ajax({
-//                url: "/Departments/Delete/",
-//                data: { id: id }
-//            }).then((result) => {
-//                debugger;
-//                if (result.statusCode == 200) {
-//                    Swal.fire({
-//                        position: 'center',
-//                        type: 'success',
-//                        title: 'Department Updated Successfully'
-//                    })
-//                } else {
-//                    Swal.fire('Error', 'Failed to Input', 'error');
-//                    ClearScreen();
-//                }
-//            })
-//        };
-//    });
-//}
 
 function Delete(id) {
     Swal.fire({
@@ -129,7 +123,7 @@ function Delete(id) {
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
+        confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
         if (result.value) {
             //debugger;
@@ -137,12 +131,14 @@ function Delete(id) {
                 url: "/Departments/Delete/",
                 data: { id: id }
             }).then((result) => {
-                debugger;
+                //debugger;
                 if (result.statusCode == 200) {
                     Swal.fire({
                         position: 'center',
-                        type: 'success',
-                        title: 'Delete Successfully'
+                        icon: 'success',
+                        title: 'Delete Successfully',
+                        showConfirmButton: false,
+                        timer: 1500,
                     });
                     table.ajax.reload();
                 } else {
